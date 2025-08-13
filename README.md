@@ -1,2 +1,2 @@
-# Resume
-This repo contains my professional CV and related documents.
+# Tools
+Collection of pentesting scripts and utilities to automate common tasks and workflows.
