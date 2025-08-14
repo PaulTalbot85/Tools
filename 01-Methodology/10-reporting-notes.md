@@ -1,9 +1,21 @@
 # 10 – Reporting Notes
 
-*(Imported from your previous Reporting Notes.)*
+## Purpose
+Ensure findings are documented clearly for the client.
 
 ---
 
-Record IP, Hostname, Open Ports, Services/Versions, Credentials, Flags.
+## Report Sections
+- Executive Summary
+- Methodology
+- Findings (with severity ratings)
+- Evidence (screenshots, logs)
+- Recommendations
+- Appendix (tool output)
 
-Save nmap outputs in .gnmap, .nmap, and .xml for re-import into tools like Metasploit.
+---
+
+## Evidence Best Practices
+- Timestamp all screenshots.
+- Keep original tool output for reference.
+- Maintain chain of custody for sensitive data.
