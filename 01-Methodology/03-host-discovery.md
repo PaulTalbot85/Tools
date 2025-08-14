@@ -1,3 +1,9 @@
+# 03 – Host Discovery
+
+*(Imported from your previous Host Discovery notes.)*
+
+---
+
 Ping Scan
 
 sudo nmap -sn <TARGET_IP/NETWORK>

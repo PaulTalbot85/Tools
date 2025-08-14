@@ -1,3 +1,9 @@
+# 06 – Passive Recon
+
+*(Imported from your previous Passive Recon notes.)*
+
+---
+
 host <HOST>
 whatweb <HOST>
 whois <HOST>

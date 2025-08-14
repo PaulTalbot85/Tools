@@ -1,3 +1,9 @@
+# 04 – Port Scanning
+
+*(Imported from your previous Port Scanning notes.)*
+
+---
+
 Nmap
 
 nmap <TARGET_IP>                # Default scan
