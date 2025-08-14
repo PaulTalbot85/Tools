@@ -1,12 +1,19 @@
 # 07 – DNS Enumeration
 
-*(Imported from your previous DNS Enumeration notes.)*
+## Purpose
+Map domain relationships, subdomains, and internal records.
 
 ---
 
-sudo nano /etc/hosts
-dnsenum <HOST>
-dig <HOST>
-dig axfr @DNS-server-name <HOST>
-fierce --domain <HOST>
+## Steps
+1. Identify nameservers:
+dig ns target.com
 
+Test for zone transfer:
+dig axfr @<nameserver> target.com
+
+Subdomain brute force:
+gobuster dns -d target.com -w subdomains.txt
+
+OpSec Note
+Excessive DNS queries may alert monitoring systems — use caching resolvers where appropriate.
