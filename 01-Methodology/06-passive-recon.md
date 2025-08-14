@@ -1,27 +1,21 @@
-# 06 – Passive Recon
+# 06 – Passive Reconnaissance
 
-*(Imported from your previous Passive Recon notes.)*
+## Purpose
+Collect information without actively engaging the target.
 
 ---
 
-host <HOST>
-whatweb <HOST>
-whois <HOST>
-whois <IP>
-dnsrecon -d <HOST>
-wafw00f <HOST> -a
-sublist3r -d <HOST>
-theHarvester -d <HOST> -b all
+## Methods
+- WHOIS lookups
+- Certificate Transparency search
+- Search engines & social media
+- Paste sites
+- Public code repositories
 
-Google Dorks
+---
 
-site:
-inurl:
-site:*.sitename.com
-intitle:
-filetype:
-intitle:index of
-cache:
-inurl:auth_user_file.txt
-inurl:passwd.txt
-inurl:wp-config.bak
+## Tools
+- `theHarvester`
+- `crt.sh`
+- Google Dorking
+- `hunter.io` (email OSINT)
