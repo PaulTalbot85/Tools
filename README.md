@@ -1,3 +1,6 @@
+# Quick Start
+- Methodology cheat sheet: [01-Methodology/QUICK_REF.md](./01-Methodology/QUICK_REF.md)
+
 # 🛠️ Penetration Testing Notes & Resources
 
 A curated, structured collection of my penetration testing methodology, tooling references, and workflow notes — built from lab work, CTFs, and certification prep (eJPT, eCPPT, OSCP).

@@ -1,3 +1,6 @@
+# Quick Link
+- Open the one-page cheat sheet: [QUICK_REF.md](./QUICK_REF.md)
+
 # 01 – Methodology
 
 Central hub for starting and managing penetration tests, red team engagements, and lab exams.
