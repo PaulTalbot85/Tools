@@ -1,17 +1,18 @@
 # 03 – Host Discovery
 
-*(Imported from your previous Host Discovery notes.)*
+## Purpose
+Identify active systems within the agreed scope.
 
 ---
 
-Ping Scan
+## Passive Discovery
+- DNS records
+- WHOIS information
+- Certificate Transparency logs
+- OSINT from public sources
 
-sudo nmap -sn <TARGET_IP/NETWORK>
-
-ARP Scan
-
-netdiscover -i eth1 -r <TARGET_IP/NETWORK>
-
-fping
-
-fping -I eth1 -g <TARGET_IP/NETWORK> -a 2>/dev/null
+## Active Discovery
+### ICMP Sweep
+```bash
+fping -a -g <CIDR> 2>/dev/null
+nmap -sn <CIDR>
