@@ -1,42 +1,26 @@
-# 09 – Initial Access (Decision Flow)
+# Initial Access
 
-*(Seeded from bits of your workflow; refine to a short decision tree.)*
+Use this after enumeration to gain your first foothold.
 
----
+## Common Techniques
+1. **Exploiting Known Vulnerabilities**
+   - RCE in web apps, unpatched services
+   - Public exploits from Exploit-DB, GitHub
 
-# Penetration Testing Workflow
+2. **Brute Force / Credential Stuffing**
+   - SSH, RDP, SMB, WinRM
+   - Use small targeted wordlists first
 
-## 1. Information Gathering
+3. **Phishing / User Interaction**
+   - HTA payloads, malicious docs, links
+   - Combine with OSINT on targets
 
-### Networking Basics
+4. **Misconfigurations**
+   - Anonymous SMB shares
+   - Default credentials
+   - World-writable web directories
 
-**Linux**
-
-ip route
-ip a
-ip -br -c a
-
-Windows
-
-route print
-ipconfig /all
-
-
-Mac OS X / Linux
-
-netstat -r
-ifconfig
-
-ARP
-
-Linux
-
-ip neighbour
-
-Windows
-
-arp -a
-
-Mac OS X / Linux
-
-arp
+## Post-Access Actions
+- Establish persistence
+- Enumerate system & network
+- Prepare for privilege escalation
