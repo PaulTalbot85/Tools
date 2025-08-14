@@ -1,21 +1,19 @@
-# Vulnerability Research
+# 08 – Vulnerability Research
 
-Once you’ve identified services, versions, and potential weaknesses:
+## Purpose
+Correlate enumerated services with known vulnerabilities.
 
-## Step 1 – Version Matching
-- \`searchsploit <service> <version>\`
-- Google: \`"service version exploit"\`
-- Exploit-DB, Rapid7 DB, CVE Details
+---
 
-## Step 2 – CVE Lookup
-- \`cve-search <service> <version>\`
-- NVD (https://nvd.nist.gov)
-- SecurityFocus, Vulners
+## Sources
+- NVD (National Vulnerability Database)
+- Exploit-DB
+- Vendor advisories
+- CVE Details
 
-## Step 3 – Proof of Concept (PoC)
-- Validate PoC in lab before using on client systems.
-- Prioritize RCE, privilege escalation, and auth bypass.
+---
 
-## Step 4 – Exploit Prioritization
-- High-impact + low-complexity first
-- Map vulnerabilities to potential attack paths
+## Process
+1. Identify exact version of service.
+2. Search vulnerability databases.
+3. Assess exploitability within scope & ROE.
