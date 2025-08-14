@@ -1,33 +1,30 @@
-# Scoping Checklist
+# 02 – Scoping Checklist
 
-Use this before starting any engagement to define the scope, rules, and expectations.
+## Purpose
+Ensure all pre-engagement requirements are completed before testing begins.
 
-## Engagement Details
-- [ ] Client name & contact info
-- [ ] Engagement start & end dates
-- [ ] Testing hours (local time)
-- [ ] Time zone differences
+---
 
-## Scope Definition
-- [ ] In-scope IP ranges & domains
+## Administrative Scope
+- [ ] Client name & contact
+- [ ] Date & time window for testing
+- [ ] Authorisation letter signed
+- [ ] ROE (Rules of Engagement) agreed
+
+## Technical Scope
+- [ ] Target IP ranges / domains
+- [ ] In-scope systems & services
 - [ ] Out-of-scope systems
-- [ ] Social engineering permitted? (Y/N)
-- [ ] Physical testing permitted? (Y/N)
-
-## Rules of Engagement
-- [ ] Required notification on critical findings
-- [ ] Emergency contact for service disruptions
-- [ ] Data handling & storage policy
-
-## Testing Goals
-- [ ] External network penetration
-- [ ] Internal network penetration
-- [ ] Web application testing
-- [ ] Social engineering
-- [ ] Physical security
+- [ ] Physical / social engineering allowed? (yes/no)
+- [ ] Test accounts provided?
+- [ ] Required compliance (e.g., PCI-DSS, ISO 27001)
 
 ## Deliverables
-- [ ] Executive summary
-- [ ] Technical report
-- [ ] Remediation plan
-- [ ] Raw data / evidence
+- [ ] Reporting format
+- [ ] Delivery date
+- [ ] Post-test remediation window
+
+---
+
+## Professional Tip
+Document scope boundaries explicitly — anything not listed is out-of-scope and must not be touched.
