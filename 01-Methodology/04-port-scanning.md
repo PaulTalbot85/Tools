@@ -1,23 +1,23 @@
 # 04 – Port Scanning
 
-*(Imported from your previous Port Scanning notes.)*
+## Purpose
+Identify exposed services and understand the attack surface.
 
 ---
 
-Nmap
+## TCP
+### Quick Scan
 
-nmap <TARGET_IP>                # Default scan
-nmap -Pn <TARGET_IP>            # Skip ping
-nmap -p- <TARGET_IP>            # All ports
-nmap -F <TARGET_IP>             # Fast scan
-nmap -sU <TARGET_IP>            # UDP scan
-nmap -sV <TARGET_IP>            # Service scan
-sudo nmap -sV -O <TARGET_IP>    # Service + OS detection
-nmap -sC <TARGET_IP>            # Default scripts
-nmap -A <TARGET_IP>             # Aggressive scan
+nmap -Pn -T4 --top-ports 1000 -sC -sV <IP> -oN quick_tcp.txt
 
+Full Scan
+nmap -p- -T4 <IP> -oN allports_tcp.txt
 
-Output
+UDP
+nmap -sU --top-ports 100 <IP> -oN top_udp.txt
 
-nmap -oN output.txt <TARGET_IP>
-nmap -oA outputfile <TARGET_IP>
+Professional Practices
+Save scan results in multiple formats (normal, XML, grepable).
+
+Run scans during agreed testing windows to reduce impact.
+
