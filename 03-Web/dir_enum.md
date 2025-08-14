@@ -1,13 +1,10 @@
-# Directory and File Enumeration
+# Directory Discovery (Authorized targets only)
 
 ## Gobuster
+gobuster dir -u http://<IP>/ -w /usr/share/wordlists/dirb/common.txt -o gobuster_<IP>.txt
 
-gobuster dir -u <URL> -w /usr/share/wordlists/dirb/common.txt
-gobuster dir -u <URL> -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html
-FFUF
+## FFUF (status filter)
+ffuf -w /usr/share/wordlists/dirb/common.txt -u http://<IP>/FUZZ -mc 200,204,301,302 -o ffuf_<IP>.json
 
-ffuf -u <URL>/FUZZ -w /usr/share/wordlists/dirb/common.txt
-ffuf -u <URL>/FUZZ -w /usr/share/wordlists/seclists/Discovery/Web-Content/big.txt -e .php,.html,.txt
-Dirsearch
-
-dirsearch -u <URL> -e php,html,txt
+## Notes
+- Respect rate limits; avoid noisy scans on prod.

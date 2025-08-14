@@ -1,27 +1,14 @@
-# HTTP/HTTPS Enumeration
+# HTTP — Quick Enumeration (Authorized targets only)
 
-## Nmap NSE
+## First touch
+curl -I http://<IP>/
+whatweb http://<IP>/
+nmap -p 80,443 -sV --script http-title,http-headers,http-server-header <IP>
 
-nmap -p80,443,8080,8443 -sV -sC -O <TARGET_IP>
-nmap --script http-enum,http-title,http-headers,http-methods -p80,443 <TARGET_IP>
+## Robots / sitemap
+curl -s http://<IP>/robots.txt
+curl -s http://<IP>/sitemap.xml
 
-Technology Fingerprinting
-
-whatweb <URL>
-whatweb --aggression 3 <URL>
-wappalyzer <URL>   # browser extension
-
-Header Grab
-
-curl -I <URL>
-curl -s -D- <URL> | less
-
-Robots & Sitemap
-
-curl -s <URL>/robots.txt
-curl -s <URL>/sitemap.xml
-
-SSL/TLS
-
-nmap --script ssl-cert,ssl-enum-ciphers -p443 <TARGET_IP>
-openssl s_client -connect <TARGET_IP>:443
+## Tech & headers to note
+- Server, X-Powered-By, Cookies, CSP
+- Redirects / VHosts (try Host: headers if in scope)

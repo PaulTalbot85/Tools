@@ -1,28 +1,20 @@
-# Live Note-Taking Template
+# Note Taking — Per Host
 
-## Target: <IP or Hostname>
-**Date:**  
-**Tester:**  
+Host:
+Date/Time:
+Tester:
 
----
+## Recon
+- Ping/ARP:
+- Open ports:
 
-### Service Enumeration
-- Nmap:  
-- Version scan:  
-- Additional info:  
+## Services
+- <port/service>:
+  - Enum notes:
+  - Evidence:
 
-### Vulnerability Discovery
-- Vulnerability name:  
-- Proof:  
+## Creds / Tokens
+- User:Pass / Hashes:
+- Source:
 
-### Exploitation Steps
-- Payload/command:  
-- Output:  
-
-### Post-Exploitation
-- Loot found:  
-- Privilege escalation:  
-
-### Evidence
-- Screenshot file:  
-- Notes:  
+## Impact / Next Steps

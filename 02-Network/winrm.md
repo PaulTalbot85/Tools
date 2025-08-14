@@ -1,19 +1,10 @@
-# WinRM (TCP/5985, 5986)
+# WinRM — Quick Enum (Authorized targets only)
 
 ## Discovery
+nmap -p 5985,5986 -sV <IP>
 
-nmap -sV -p 5985,5986 <TARGET_IP>
-CrackMapExec quick checks
+## Client (when creds provided)
+# evil-winrm -i <IP> -u <user> -p <pass>
 
-crackmapexec winrm <TARGET_IP> -u <USER> -p <PW> -x "whoami"
-Evil-WinRM shell
-
-evil-winrm -i <TARGET_IP> -u <USER> -p '<PW>'
-Metasploit exec
-
-use exploit/windows/winrm/winrm_script_exec
-set RHOSTS <TARGET_IP>
-set USERNAME <USER>
-set PASSWORD <PW>
-set FORCE_VBS true
-run
+## Notes
+- Restrict to approval; log evidence paths.

@@ -1,25 +1,13 @@
-# SSH Enumeration & Access (TCP/22)
+# SSH — Quick Enum (Authorized targets only)
 
-## Nmap
+## Detect & fingerprint
+nmap -p 22 -sV --script ssh2-enum-algos,ssh-hostkey <IP>
+ssh -o BatchMode=yes <user>@<IP>  # non-interactive banner check
 
-sudo nmap -p22 -sV -sC -O <TARGET_IP>
-nmap -p22 --script ssh2-enum-algos <TARGET_IP>
-nmap -p22 --script ssh-hostkey --script-args ssh_hostkey=full <TARGET_IP>
-nmap -p22 --script ssh-auth-methods --script-args="ssh.user=<USER>" <TARGET_IP>
-nmap -p22 --script=ssh-brute --script-args userdb=<USERS_LIST> <TARGET_IP>
+## Hardening checks (read-only)
+- Host key algorithms
+- Kex algorithms / MACs
+- Protocol version
 
-Connect / Netcat sanity
-
-nc -v <TARGET_IP> 22
-ssh <USER>@<TARGET_IP>
-Metasploit
-
-use auxiliary/scanner/ssh/ssh_login
-set RHOSTS <TARGET_IP>
-set USERPASS_FILE /usr/share/wordlists/metasploit/root_userpass.txt
-set STOP_ON_SUCCESS true
-run
-
-Brute (scoped)
-
-hydra -l <USER> -P /usr/share/wordlists/rockyou.txt <TARGET_IP> ssh
+## Notes
+- Brute-force is intentionally omitted here; add your approved workflow if allowed.

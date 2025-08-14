@@ -1,20 +1,10 @@
-# SMTP (TCP/25)
+# SMTP — Quick Enum (Authorized targets only)
 
-## Nmap / Banner
+## Discovery
+nmap -p 25,465,587 -sV --script smtp-commands,smtp-open-relay <IP>
 
-sudo nmap -p25 -sV -sC -O <TARGET_IP>
-nmap -sV --script banner <TARGET_IP>
-Manual
+## Safe checks
+swaks --server <IP> --helo test.local --quit-after HELO
 
-nc <TARGET_IP> 25
-telnet <TARGET_IP> 25
-HELO attacker.xyz
-EHLO attacker.xyz
-User Enumeration
-
-smtp-user-enum -U /usr/share/commix/src/txt/usernames.txt -t <TARGET_IP>
-Metasploit
-
-use auxiliary/scanner/smtp/smtp_enum
-set RHOSTS <TARGET_IP>
-run
+## Notes
+- Do not spam or relay test beyond scope.

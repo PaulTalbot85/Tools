@@ -1,14 +1,5 @@
-# Drupal Enumeration & Exploitation
+# Drupal — Quick Checks (Authorized targets only)
 
-## Detect
-
-whatweb <URL>
-droopescan scan drupal -u <URL>
-
-Exploits
-
-searchsploit drupal
-
-# e.g., Drupalgeddon 2
-
-python3 drupalgeddon2.py <URL>
+- CHANGELOG.txt (older sites)
+- /user, /node/1, /admin hints
+- Modules/themes passive inventory
