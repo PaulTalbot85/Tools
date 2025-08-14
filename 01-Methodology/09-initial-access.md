@@ -1,26 +1,23 @@
-# Initial Access
+# 09 – Initial Access
 
-Use this after enumeration to gain your first foothold.
+## Purpose
+Obtain first access to the target using authorised and approved methods.
 
-## Common Techniques
-1. **Exploiting Known Vulnerabilities**
-   - RCE in web apps, unpatched services
-   - Public exploits from Exploit-DB, GitHub
+---
 
-2. **Brute Force / Credential Stuffing**
-   - SSH, RDP, SMB, WinRM
-   - Use small targeted wordlists first
+## Common Vectors
+- Exploiting known CVEs
+- Default or weak credentials
+- Misconfigurations
+- File upload vulnerabilities
 
-3. **Phishing / User Interaction**
-   - HTA payloads, malicious docs, links
-   - Combine with OSINT on targets
+---
 
-4. **Misconfigurations**
-   - Anonymous SMB shares
-   - Default credentials
-   - World-writable web directories
+## Tool Examples
 
-## Post-Access Actions
-- Establish persistence
-- Enumerate system & network
-- Prepare for privilege escalation
+hydra -L users.txt -P passwords.txt ssh://<IP>
+searchsploit <service> <version>
+Professional Guidelines
+Avoid DoS conditions.
+
+Only run exploits approved in ROE.
