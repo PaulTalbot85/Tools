@@ -12,6 +12,7 @@ Quick references for common network services. Use this alongside 01-Methodology.
 - mssql.md – impacket-mssqlclient basics
 - winrm.md – evil-winrm and CrackMapExec tips
 - pivoting.md, tunnelling.md – quick notes (full guide in 05-Pivoting)
+- udp.md - classic weak Telnet service
 
 ## General tips
 - Save outputs (nmap -oA, tee) for later grep.
